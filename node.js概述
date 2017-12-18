@@ -1,0 +1,10 @@
+1.下载
+在node.js官网，选择版本，复制链接，在终端使用命令wget +链接进行下载。
+2.解压
+$ xz -d ***.tar.xz
+$ tar -xvf ***.tar
+3.repl
+./node进入交互环境
+4.node ***.js执行外部js文件。
+
+
