@@ -1,0 +1,10 @@
+1.node.js中所有能发出事件的对象都是events.EventEmitter的实例，对象发出事件后，需要响应函数来处理，这个响应函数就是监听器。
+2.EventEmitter类的对象有一系列方法可以进行事件的相关操作：
+	addListener/on(event,listener);为事件event添加监听器listener
+	once(event,listener);为对象的事件event添加只响应一次的监听器listener
+	removeListener(event,listner);移除event对象的一个监听器
+	removeAllListener([listners]);移除某个事件的所有监听器
+	setMaxListener(n);设置最大监听器个数
+	emit(event,[arg1],[arg2],...);触发自定义事件event
+	listnerCount();查看与对象绑定的监听器的个数
+	
