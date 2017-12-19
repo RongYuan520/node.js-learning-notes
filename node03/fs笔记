@@ -1,0 +1,10 @@
+1.和浏览器端javascript不同，node.js可以访问本地文件系统。
+
+2.fs模块用于文件访问，有同步和异步两种方式。（函数名后有无sycn）
+
+3.readFile读取文件
+  writeFile写文件
+  fs.read和fs.write读写文件需要使用fs.open打开文件和fs.close关闭文件
+  fs.mkdir创建目录
+  fs.readdir读取目录
+  fs.rmdir删除目录
