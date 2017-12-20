@@ -1,0 +1,49 @@
+作为web服务器软件，node.js提供了net模块用于tcp通信，dgram模块用于udp通信。tcp 和 udp属于传输层协议，启动服务器时只需告诉监听的端口号。
+
+tcp 
+
+1.net模块提供了一个异步网络包装器，用于tcp网络编程，包含创建服务器和客户端的方法。
+2.net.createServer()用于创建tcp服务器，net.connect()用于创建客户端去链接服务器，通过listen()监听特定端口。
+3.接收到信息触发data事件，断开连接触发end事件。
+4.服务器事件（官网查询）
+	listening:server.listening()
+	connection:net.createServer()
+	close:server.close()
+	error
+  连接事件
+	data - 一端执行write()事件，另一端触发该事件
+	end  - 任意一端断开链接，触发该事件
+	connect - 该事件用于客户端，当套接字服务端链接成功时触发（链接服务器成功时触发）
+	drain - 当任意一端触发write()，当前这端触发该事件
+	error - 当异常发生，触发该事件
+
+5.面向连接（建立通信线路：建立，使用，释放）
+  三次握手（建立链接的过程）
+
+
+
+
+udp
+
+1.dgram模块用于udp网络编程。
+2.dgram.createSocket()创建服务,通过bind()监听特定端口，通过send()向socket发送信息，发送的消息必须通过Buffer创建。
+3.接收到信息触发message事件，bind()绑定端口时触发服务器的lisntening事件。
+4.特征
+	无链接
+	不可靠的信息服务
+	在网络差的情况下，丢包严重
+	既可以做客户端发送消息，也可以做服务端接受消息
+	使用场景：对丢包要求不高的场景（音频，视频，DNS服务）
+
+http
+
+http建立在tcp上的应用层协议
+
+
+排错
+
+Error:connect ECONNREFUSED 127.0.0.1:8080由于服务器端口没开
+
+
+ 
+
