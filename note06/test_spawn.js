@@ -1,0 +1,19 @@
+var spawn = require('child_process').spawn;
+var ls = spawn('ls',['-lh','/usr']);
+
+ls.stdout.on('data',function(data) {
+	console.log('stdout:' + data);
+});
+
+ls.stderr.on('data',function(data) {
+	console.log('stderr:' + data);
+});
+
+ls.on('close',function(code) {
+	console.log('child process exit with code :' + code);
+})
+sum=0;
+for(var i=0;i<500000000;i++){
+	sum   += i;
+}
+console.log('main stop!')
