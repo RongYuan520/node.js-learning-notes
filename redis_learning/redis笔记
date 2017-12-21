@@ -1,0 +1,15 @@
+1.set 和 list集合的区别：
+	set 不能存放相同的元素，list没有限制
+
+2.消息中介
+	redis相当于一个中介，当用户订阅了A的消息，当A发送消息的时候，所有订阅者会实时得到该消息。
+
+
+
+
+publisher(A,message) ---->       redis.on(A,function(){
+					send message -->subscribe1
+					send message -->subscribe2
+					.....
+subscriber1(A) <---------	
+subscriber2(A) <--------				})

@@ -1,0 +1,25 @@
+这次自己创建了一个app_demo项目，该项目包含了页面（发送请求），路由（导航资源），主应用程序（导航到的资源做处理，返回给页面）
+1.一个nodejs项目会包含package.json文件，该文件内容如下
+		{
+			"name":"app_demo",         name 对项目进行描述，可当做项目名称
+			"main":"app.js",           必须的，用于指定项目的起始启动项，不写，默认找index.js
+			"dependencies":{
+				"express":"*",      dependencies属性很重要，用来引入项目所需要的第三方库，及其版本，引入后，在项目所在文件夹下的终端执行 npm install就会						    把package.json里dependencies引入的包下载在自动创建的node_module文件夹下
+				"body-Parser":"*"
+			}
+		}
+
+2.主应用程序app.js中，也可以直接根据页面的请求进行导航，并作出处理，但一般可以把路由处理放在单独的router.js中，防止主程序代码太厚重，这个项目中借住require(router.js)跳转到路由处理的js文件，在更改路由配置，只需要更改router.js，不用改主程序。
+
+3.路由处理router.js中，使用的是express库的get(),use()方法，不同的库用其对应的路由处理方法，处理的函数根据需要进行处理，如返回请求头的相关信息，或返回页面内容，也可以返回一个静态文件。
+
+4.页面可以放在views文件夹下，写页面代码
+
+
+app
+  --views
+  --utils
+  --model 
+  --router (controller)
+  package.json
+  --main.js
