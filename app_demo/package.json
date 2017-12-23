@@ -3,6 +3,8 @@
 	"main": "./app.js",
 	"dependencies": {
 		"express": "*",
-		"body-parser": "*"
+		"body-parser": "*",
+		"mysql": "*",
+		"redis": "*"
 	}
 }
