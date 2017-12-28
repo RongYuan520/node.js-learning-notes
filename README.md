@@ -5,7 +5,8 @@ note01 主要学习了exports导出，以及module.exports导出，以及require
 
 note02 学习了Events事件，以及响应事件的监听器函数.包括添加，移除监听器函数
 	1.以建立一个简单的http服务器为例，当服务器启动后，当有用户访问服务器时，触发request事件，并为该事件添加一个监听函数，该监听函数返回结果给客户端
-	test1.js :
+	test1.js 内容如下：
+
 	var http=require("http");
 	var server=http.createServer();
 
