@@ -1,0 +1,15 @@
+
+js内部接口的定义
+funciton load_file(fileName,callback) {
+	fs.read(
+		fileName,
+		callback(req,res)
+	)
+}
+
+调用：
+load_file("/usr/xx.txt",function(req,res) {
+
+})
+
+

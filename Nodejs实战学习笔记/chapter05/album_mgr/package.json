@@ -1,0 +1,15 @@
+{
+  "name": "album_mgr",
+  "version": "1.0.0",
+  "description": "albums_manager",
+  "main": "./lib/albums.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "RongGuo",
+  "license": "ISC"
+}

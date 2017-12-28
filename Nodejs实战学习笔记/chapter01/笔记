@@ -1,0 +1,21 @@
+访问服务器的两种方式：
+	第一：浏览器键入地址访问，如www.baidu.com
+	第二：使用命令行 curl -i www.baidu.com,这种方式返回更详细，除了内容还有响应头的信息
+		HTTP/1.1 200 ok
+		Content-Length:5
+		Content-Type:text/plain
+		Date:
+		Connection:keep-alive
+		内容
+
+nodejs调试
+	node debug ***.js      启动调试模式，进入debug>模式
+	setBreakpoint(5)       在第5行打上断点
+	debug>cont             继续执行
+	debug>next 	       跳到下一个语句，相当于F10
+	step			进入函数，相当于F11
+	out			跳出函数
+	repl		       启动repl，查看变量
+	CTR+c			退出repl
+	CTR+d			退出debug,关闭进程
+	

@@ -45,8 +45,47 @@ router.all("/insertAreaPrice",function (req,res){
 });
 
 
+//-----------------------------最后的test-----------------------------------
+router.all("/last",function(req,res) {
+	res.contentType("text/html");
+	res.sendFile("/insertPerson.html",{root:__dirname + '/../public'});
+});
 
+router.all("/searchName",function(req,res) {
+	console.log("----------------------------------------");
+	//操作数据库，将数据插入数据库表
+	var id = req.query.id;
+	
 
+	var mysql = require("mysql");
+	var connection = mysql.createConnection({
+		host:"localhost",
+		user:"root",
+		
+		password:"root",
+		database:"momo"
+		
+		
+	});
+	connection.connect(function(err,data) {
+		if(err) {
+			console.log('connection error');
+		}
+	});
+	console.log('select * from person where id=' + id);
+	connection.query('select * from person where id=' + id + ";",function(err,rows,fields) {
+		if(err){
+			throw err;
+		}
+		var name = rows[0].name;
+		res.end("hello  " + name);
+		connection.end();
+	});
+
+	
+});
+
+//--------------------------------------------
 
 
 

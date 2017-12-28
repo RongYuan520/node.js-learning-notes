@@ -53,6 +53,12 @@ function query(id){
 //
 
 function insert(area,price) {
+	var connection = mysql.createConnection({
+        host:conf.conf.host,
+        user:conf.conf.user,
+        password:conf.conf.password,
+        database:conf.conf.database
+       });
 	connection.connect();
 	
 	var sql = 'insert into housePrice values (' + area +',' +price +')';
